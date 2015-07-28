@@ -28,4 +28,11 @@ class EntriesController < ApplicationController
     redirect_to("/entries/#{@entry.id}")
   end
 
+# destroy
+  def destroy
+    @entry_to_delete = Entry.find(params[:id])
+    @entry_to_delete.destroy
+    redirect_to("/entries")
+  end
+
 end
